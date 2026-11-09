@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-warm-white text-ink-900 font-sans antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  ::selection {
+    @apply bg-deep-navy-100 text-deep-navy-700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3.5
+           bg-deep-navy-600 text-white
+           text-[15px] font-medium tracking-tight
+           rounded-xl
+           shadow-soft
+           hover:bg-deep-navy-700
+           active:bg-deep-navy-800 active:translate-y-[1px]
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-deep-navy-300 focus:ring-offset-2 focus:ring-offset-warm-white;
+  }
+  .btn-primary-sm {
+    @apply inline-flex items-center justify-center px-5 py-2.5
+           bg-deep-navy-600 text-white
+           text-sm font-medium tracking-tight
+           rounded-lg
+           hover:bg-deep-navy-700
+           active:bg-deep-navy-800 active:translate-y-[1px]
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-deep-navy-300 focus:ring-offset-2 focus:ring-offset-warm-white;
+  }
+  .card {
+    @apply bg-white border border-ink-100 rounded-2xl shadow-card;
+  }
+  .section-inner {
+    @apply max-w-3xl mx-auto px-6 sm:px-8;
+  }
+}
+
+/* Subtle grid background texture, Notion-like */
+.notion-grid-bg {
+  background-color: #FAFAF7;
+  background-image:
+    linear-gradient(rgba(15, 28, 54, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 28, 54, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(15, 28, 54, 0.08) 20%,
+    rgba(15, 28, 54, 0.08) 80%,
+    transparent 100%
+  );
+}
